@@ -54,13 +54,13 @@ typedef struct {
 
 typedef struct {
     void* gpio_user;
-    a4988_err_t (*gpio_init)(void*);
-    a4988_err_t (*gpio_deinit)(void*);
+    a4988_err_t (*gpio_initialize)(void*);
+    a4988_err_t (*gpio_deinitialize)(void*);
     a4988_err_t (*gpio_write_pin)(void*, uint32_t, bool);
 
     void* pwm_user;
-    a4988_err_t (*pwm_init)(void*);
-    a4988_err_t (*pwm_deinit)(void*);
+    a4988_err_t (*pwm_initialize)(void*);
+    a4988_err_t (*pwm_deinitialize)(void*);
     a4988_err_t (*pwm_start)(void*);
     a4988_err_t (*pwm_stop)(void*);
     a4988_err_t (*pwm_set_freq)(void*, uint32_t);
