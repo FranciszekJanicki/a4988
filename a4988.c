@@ -5,14 +5,16 @@
 
 static a4988_err_t a4988_pwm_initialize(a4988_t const* a4988)
 {
-    return a4988->interface.pwm_initialize ? a4988->interface.pwm_initialize(a4988->interface.pwm_user)
-                                     : A4988_ERR_NULL;
+    return a4988->interface.pwm_initialize
+               ? a4988->interface.pwm_initialize(a4988->interface.pwm_user)
+               : A4988_ERR_NULL;
 }
 
 static a4988_err_t a4988_pwm_deinitialize(a4988_t const* a4988)
 {
-    return a4988->interface.pwm_deinitialize ? a4988->interface.pwm_deinitialize(a4988->interface.pwm_user)
-                                       : A4988_ERR_NULL;
+    return a4988->interface.pwm_deinitialize
+               ? a4988->interface.pwm_deinitialize(a4988->interface.pwm_user)
+               : A4988_ERR_NULL;
 }
 
 static a4988_err_t a4988_pwm_start(a4988_t const* a4988)
@@ -36,14 +38,16 @@ static a4988_err_t a4988_pwm_set_freq(a4988_t const* a4988, uint32_t freq)
 
 static a4988_err_t a4988_gpio_initialize(a4988_t const* a4988)
 {
-    return a4988->interface.gpio_initialize ? a4988->interface.gpio_initialize(a4988->interface.gpio_user)
-                                      : A4988_ERR_NULL;
+    return a4988->interface.gpio_initialize
+               ? a4988->interface.gpio_initialize(a4988->interface.gpio_user)
+               : A4988_ERR_NULL;
 }
 
 static a4988_err_t a4988_gpio_deinitialize(a4988_t const* a4988)
 {
-    return a4988->interface.gpio_deinitialize ? a4988->interface.gpio_deinitialize(a4988->interface.gpio_user)
-                                        : A4988_ERR_NULL;
+    return a4988->interface.gpio_deinitialize
+               ? a4988->interface.gpio_deinitialize(a4988->interface.gpio_user)
+               : A4988_ERR_NULL;
 }
 
 static a4988_err_t a4988_gpio_write_pin(a4988_t const* a4988, uint32_t pin, bool state)
