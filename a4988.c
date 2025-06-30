@@ -29,10 +29,10 @@ static a4988_err_t a4988_pwm_stop(a4988_t const* a4988)
                                      : A4988_ERR_NULL;
 }
 
-static a4988_err_t a4988_pwm_set_freq(a4988_t const* a4988, uint32_t freq)
+static a4988_err_t a4988_pwm_set_frequency(a4988_t const* a4988, uint32_t frequency)
 {
-    return a4988->interface.pwm_set_freq
-               ? a4988->interface.pwm_set_freq(a4988->interface.pwm_user, freq)
+    return a4988->interface.pwm_set_frequency
+               ? a4988->interface.pwm_set_frequency(a4988->interface.pwm_user, frequency)
                : A4988_ERR_NULL;
 }
 
@@ -87,7 +87,7 @@ a4988_err_t a4988_set_frequency(a4988_t const* a4988, uint32_t frequency)
 {
     assert(a4988);
 
-    return a4988_pwm_set_freq(a4988, frequency);
+    return a4988_pwm_set_frequency(a4988, frequency);
 }
 
 a4988_err_t a4988_set_microstep(a4988_t const* a4988, a4988_microstep_t microstep)

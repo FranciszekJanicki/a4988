@@ -63,7 +63,7 @@ typedef struct {
     a4988_err_t (*pwm_deinitialize)(void*);
     a4988_err_t (*pwm_start)(void*);
     a4988_err_t (*pwm_stop)(void*);
-    a4988_err_t (*pwm_set_freq)(void*, uint32_t);
+    a4988_err_t (*pwm_set_frequency)(void*, uint32_t);
 } a4988_interface_t;
 
 #endif // A4988_A4988_CONFIG_H
