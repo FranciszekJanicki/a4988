@@ -136,7 +136,7 @@ a4988_err_t a4988_set_quarter_microstep(a4988_t const* a4988)
 {
     assert(a4988);
 
-    a4988_err_t err = a4988_gpio_write_pin(a4988, a4988->config.pin_ms1, true);
+    a4988_err_t err = a4988_gpio_write_pin(a4988, a4988->config.pin_ms1, false);
     err |= a4988_gpio_write_pin(a4988, a4988->config.pin_ms2, true);
     err |= a4988_gpio_write_pin(a4988, a4988->config.pin_ms3, false);
 
@@ -158,8 +158,8 @@ a4988_err_t a4988_set_sixteenth_microstep(a4988_t const* a4988)
 {
     assert(a4988);
 
-    a4988_err_t err = a4988_gpio_write_pin(a4988, a4988->config.pin_ms1, false);
-    err |= a4988_gpio_write_pin(a4988, a4988->config.pin_ms2, false);
+    a4988_err_t err = a4988_gpio_write_pin(a4988, a4988->config.pin_ms1, true);
+    err |= a4988_gpio_write_pin(a4988, a4988->config.pin_ms2, true);
     err |= a4988_gpio_write_pin(a4988, a4988->config.pin_ms3, true);
 
     return err;
