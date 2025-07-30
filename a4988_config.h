@@ -4,6 +4,10 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef enum {
     A4988_ERR_OK = 0,
     A4988_ERR_FAIL = 1 << 0,
@@ -65,5 +69,9 @@ typedef struct {
     a4988_err_t (*pwm_stop)(void*);
     a4988_err_t (*pwm_set_frequency)(void*, uint32_t);
 } a4988_interface_t;
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // A4988_A4988_CONFIG_H

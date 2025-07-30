@@ -3,6 +3,10 @@
 
 #include "a4988_config.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct {
     a4988_config_t config;
     a4988_interface_t interface;
@@ -32,5 +36,9 @@ a4988_err_t a4988_set_stop_direction(a4988_t const* a4988);
 a4988_err_t a4988_set_reset(a4988_t const* a4988, bool reset);
 a4988_err_t a4988_set_enable(a4988_t const* a4988, bool enable);
 a4988_err_t a4988_set_sleep(a4988_t const* a4988, bool sleep);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // A4988_A4988_H
